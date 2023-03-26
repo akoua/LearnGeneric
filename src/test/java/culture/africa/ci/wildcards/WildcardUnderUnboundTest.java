@@ -36,4 +36,17 @@ class WildcardUnderUnboundTest {
         //then
         assertEquals(2, mothers.size());
     }
+
+    @Test
+    void WildcardRelation() {
+        //given
+        List<? super Fille> filleSub = new ArrayList<>();
+        List<? super Mere> mereSub = new ArrayList<>();
+        mereSub.add(new PetiteFille());
+        mereSub.add(new Mere());
+        //when
+        filleSub = mereSub;
+        //then
+        assertEquals(2, filleSub.size());
+    }
 }
